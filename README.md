@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# An online class I took for Vatebra academy on react fundamentals
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Form = () => {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
     const [email, setEmail] = useState("");
+    const emailRef = useRef("");
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -17,20 +18,40 @@ const Form = () => {
         setLastname(e.target.value);
     }
     const onEmailChange = (e) => {
-        setEmail(e.target.value);
+        console.log("Email current ref", emailRef.current.value);
+        setEmail(emailRef.current.value);
     }
 
     return (
         <div>
             <form onSubmit={submitForm}>
                 <label htmlFor="firstname">
-                    <input onChange={onFirstnameChange} name="firstname" placeholder="Firstname" type="text" id="firstname" />
+                    <input
+                        onChange={onFirstnameChange}
+                        name="firstname"
+                        placeholder="Firstname"
+                        type="text"
+                        id="firstname"
+                    />
                 </label>
                 <label htmlFor="lastname">
-                    <input onChange={onLastnameChange} name="lastname" placeholder="Lastname" type="text" id="lastname" />
+                    <input
+                        onChange={onLastnameChange}
+                        name="lastname"
+                        placeholder="Lastname"
+                        type="text"
+                        id="lastname"
+                    />
                 </label>
                 <label htmlFor="email">
-                    <input onChange={onEmailChange} name="email" placeholder="Email" type="text" id="email" />
+                    <input
+                        onChange={onEmailChange}
+                        name="email"
+                        placeholder="Email"
+                        type="text"
+                        id="email"
+                        ref={emailRef}
+                    />
                 </label>
                 <button type="submit">Submit</button>
             </form>

@@ -45,7 +45,7 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  background: grey;
+  background: #d9dddc;
   padding: 1rem 2rem;
   border-radius: 1rem;
   text-align: left;
@@ -62,4 +62,5 @@ main {
 .users a {
   color: var(--primary-500);
   text-transform: capitalize;
+  text-decoration: line-through;
 }
